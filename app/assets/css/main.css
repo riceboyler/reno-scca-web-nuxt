@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --ui-header-height: 120px;
+  --ui-container: 90vw !important;
+
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-display: "Nunito", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+}
