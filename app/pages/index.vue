@@ -6,7 +6,7 @@
       </div>
       <HomepageHero />
       <div class="relative font-display flex flex-col md:flex-row gap-8">
-        <div class="relative md:sticky top-0 md:top-[125px]">
+        <div class="relative md:sticky top-0 md:top-31.25">
           <HomepageQuickLinks />
         </div>
         <div class="flex flex-col gap-5 body">

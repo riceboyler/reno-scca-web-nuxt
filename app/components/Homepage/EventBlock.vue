@@ -10,8 +10,10 @@
     <div class="p-2">
       <div v-if="programEvents?.length === 0">No upcomfing {{ type }} events</div>
       <div
-        v-else
         v-for="evt in programEvents"
+        v-else
+        :id="evt.ID.toString()"
+        :key="evt.ID"
         class="font-semibold font-display mb-2 p-1 hover:text-highlighted hover:bg-accented"
       >
         <span class="text-bold">

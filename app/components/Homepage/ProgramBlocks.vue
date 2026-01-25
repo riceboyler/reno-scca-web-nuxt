@@ -2,8 +2,9 @@
   <div>
     <div v-if="!data">Loading...</div>
     <div
-      v-else
       v-for="page in data"
+      v-else
+      :key="page.ID"
     >
       <div :id="page.Program">
         <SectionHeader>{{ page.Program }}</SectionHeader>

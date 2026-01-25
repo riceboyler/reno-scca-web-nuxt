@@ -25,10 +25,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "nuxt lint",
-    "lint:fix": "nuxt lint --fix",
-    "format": "prettier",
-    "format:write": "prettier --write"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix --quiet",
+    "format": "prettier .",
+    "format:write": "prettier . --write",
+    "fix": "prettier . --write && eslint --fix --quiet"
   },
   "type": "module",
   "devDependencies": {
@@ -37,9 +38,9 @@
     "simple-git-hooks": "^2.13.1"
   },
   "lint-staged": {
-    "*": "bun prettier --write && bun lint --fix"
+    "*": "bun run fix"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun lint-staged && git commit --amend -m 'Lint fixes'"
+    "pre-commit": "bun lint-staged"
   }
 }

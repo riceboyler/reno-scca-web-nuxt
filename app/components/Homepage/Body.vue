@@ -9,8 +9,9 @@
     </div>
     <div v-if="!data || data.length === 0">Loading...</div>
     <div
-      v-else
       v-for="content in data"
+      v-else
+      :key="content.ID"
     >
       <div v-html="content.Text" />
     </div>

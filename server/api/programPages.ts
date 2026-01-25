@@ -1,5 +1,5 @@
 import { getConnection } from "~/db/db";
-import type { ProgramPageModel } from '~/db/models/ProgramPage.model';
+import type { ProgramPageModel } from "~/db/models/ProgramPage.model";
 
 export default defineEventHandler(async () => {
   const pool = await getConnection();
