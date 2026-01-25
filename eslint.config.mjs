@@ -24,6 +24,7 @@ export default withNuxt(
         singleline: "ignore",
       },
     ],
+    "suggestCanonicalClasses": "off"
   }
 }
 );

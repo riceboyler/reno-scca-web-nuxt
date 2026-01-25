@@ -9,3 +9,20 @@
   --font-display: "Nunito", sans-serif;
   --font-oswald: "Oswald", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.body a {
+  text-decoration: underline;
+}
+
+.body a:hover {
+  font-weight: bold;
+  color: var(--text-color-highlighted);
+}

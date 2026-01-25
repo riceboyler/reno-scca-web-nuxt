@@ -1,4 +1,4 @@
-import { getConnection } from "../../db/db";
+import { getConnection } from "~/db/db";
 
 export default defineEventHandler(async () => {
   const pool = await getConnection();
