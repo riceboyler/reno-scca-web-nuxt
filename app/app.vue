@@ -1,6 +1,8 @@
 <template>
-  <UApp>
+  <UApp class="min-h-[80vh]">
     <Header />
-    <NuxtPage />
+    <UMain>
+      <NuxtPage class="py-4" />
+    </UMain>
   </UApp>
 </template>
