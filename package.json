@@ -24,10 +24,22 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "lint": "nuxt lint",
+    "lint:fix": "nuxt lint --fix",
+    "format": "prettier",
+    "format:write": "prettier --write"
   },
   "type": "module",
   "devDependencies": {
-    "@types/mssql": "^9.1.9"
+    "@types/mssql": "^9.1.9",
+    "lint-staged": "^16.2.7",
+    "simple-git-hooks": "^2.13.1"
+  },
+  "lint-staged": {
+    "*": "bun prettier --write && bun lint --fix"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bun lint-staged && git commit --amend -m 'Lint fixes'"
   }
 }
