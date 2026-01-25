@@ -1,7 +1,11 @@
 <template>
   <div class="border border-accented w-full rounded-lg overflow-hidden">
     <div class="bg-elevated font-oswald text-3xl text-center">
-      <ULink :to="`#${type}`">{{ type }}</ULink>
+      <ULink
+        class="event-link"
+        :to="`#${type}`"
+        >{{ type }}</ULink
+      >
     </div>
     <div class="p-2">
       <div v-if="programEvents?.length === 0">No upcomfing {{ type }} events</div>
@@ -44,4 +48,8 @@
   const programEvents = events.filter((event) => event.Program === type);
 </script>
 
-<style lang="postcss"></style>
+<style lang="postcss">
+  .event-link {
+    text-decoration: none !important;
+  }
+</style>
