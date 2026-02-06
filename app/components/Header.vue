@@ -7,12 +7,14 @@
     }"
   >
     <template #left>
-      <UColorModeImage
-        light="/images/reno_scca_logo_transparent.png"
-        dark="/images/reno_scca_logo_inverted_white_text.png"
-        alt="Reno SCCA Region Logo"
-        class="w-26 h-12 lg:w-51 lg:h-25"
-      />
+      <NuxtLink to="/">
+        <UColorModeImage
+          light="/images/reno_scca_logo_transparent.png"
+          dark="/images/reno_scca_logo_inverted_white_text.png"
+          alt="Reno SCCA Region Logo"
+          class="w-26 h-12 lg:w-51 lg:h-25"
+        />
+      </NuxtLink>
     </template>
     <UNavigationMenu
       :items="items"
