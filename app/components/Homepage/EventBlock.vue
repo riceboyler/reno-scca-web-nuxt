@@ -17,7 +17,7 @@
         class="font-semibold font-display mb-2 p-1 hover:text-highlighted hover:bg-accented"
       >
         <span class="text-bold">
-          {{ dayjs(evt.Date).subtract(1, "day").format("M/DD") }}
+          {{ dayjs(evt.Date).format("M/DD") }}
         </span>
         <span>: {{ evt.Name }} at {{ evt.Location }}</span>
         <div

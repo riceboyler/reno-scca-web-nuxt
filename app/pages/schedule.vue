@@ -21,7 +21,7 @@
         <div class="flex flex-col gap-2 justify-start items-start w-full">
           <SubHeader>
             <div>{{ event.Program }}</div>
-            <div>{{ dayjs(event.Date).subtract(1, "day").format("M/DD/YYYY") }}</div>
+            <div>{{ dayjs(event.Date).format("M/DD/YYYY") }}</div>
           </SubHeader>
           <div class="font-display text-md md:text-2xl text-left">
             {{ event.Name }} - Event held at {{ event.Location }}.
