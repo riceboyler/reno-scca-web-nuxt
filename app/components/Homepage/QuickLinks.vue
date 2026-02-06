@@ -7,8 +7,11 @@
           v-if="data?.length"
           class="p-2"
         >
-          <div v-for="quickLink in data">
-            <QuickLink :quickLink="quickLink" />
+          <div
+            v-for="quickLink in data"
+            :key="quickLink.ID"
+          >
+            <QuickLink :quick-link="quickLink" />
           </div>
         </div>
       </div>
@@ -19,7 +22,6 @@
 <script lang="ts" setup>
   import QuickLink from "~/components/Homepage/QuickLink.vue";
 
-  const quickLinks = ref();
   const { data } = await useFetch("/api/quickLinks");
 </script>
 

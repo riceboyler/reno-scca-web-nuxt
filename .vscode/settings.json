@@ -1,4 +1,4 @@
 {
   "nuxtr.defaultPackageManager": "Bun",
-  "nuxtr.openItemsAfterCreation": true,
+  "nuxtr.openItemsAfterCreation": true
 }

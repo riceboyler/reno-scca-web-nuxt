@@ -2,19 +2,17 @@
 
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/hints',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/scripts',
-    '@nuxt/ui',
+    "@nuxt/content",
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/hints",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "@nuxt/ui",
   ],
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
-  compatibilityDate: '2024-04-03',
-  fonts: {
-
-  }
+  compatibilityDate: "2024-04-03",
+  fonts: {},
 });
