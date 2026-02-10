@@ -8,18 +8,26 @@
           <div class="m-8 bg-secondary/10">
             <SubHeader class="my-4">{{ item.label }}</SubHeader>
             <div
-              v-if="isExpanded === item.label"
-              class="p-4"
+              :class="
+                isExpanded === item.label
+                  ? 'max-h-full opacity-100'
+                  : 'max-h-0! opacity-0 fixed left-[-100vw] top-[-100vh]'
+              "
+              class="p-4 mx-4 mb-4 body transition-all duration-500"
               v-html="item.content"
             />
             <div
-              v-else
-              class="p-4"
+              class="p-4 transition-all duration-500"
+              :class="
+                isExpanded === item.label
+                  ? 'max-h-0! opacity-0 fixed left-[-100vw] top-[-100vh]'
+                  : 'max-h-full opacity-100'
+              "
             >
               <div v-html="item.shortText" />
               <UButton
                 variant="outline"
-                class="mx-4 mb-4"
+                class="mx-4 mb-4 body"
                 @click="isExpanded = item.label?.toString() ?? ''"
               >
                 Read More
