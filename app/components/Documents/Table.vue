@@ -1,31 +1,45 @@
 <template>
-  <UTable
-    v-if="documents?.length"
-    :data="documents"
-    :columns="columns"
-    class="flex-1 body"
-    @hover="onHover"
-  >
-    <template #LinkText-cell="{ row }">
-      <NuxtLink
-        :href="`https://renoscca.org${row.original.Path}`"
-        target="_blank"
-        rel="noopener noreferrer"
+  <div class="table w-full gap-2">
+    <div class="table-header-group">
+      <div class="table-row font-bold">
+        <div class="table-cell text-left p-2 border-b border-secondary">Date</div>
+        <div class="table-cell text-left p-2 border-b border-secondary">Document</div>
+        <div class="hidden md:table-cell text-left p-2 border-b border-secondary">Description</div>
+      </div>
+    </div>
+    <div class="table-row-group">
+      <div
+        v-for="document in documents"
+        :key="document.ID"
+        class="table-row text-sm md:text-md hover:bg-secondary/10 transition-colors duration-100"
       >
-        {{ row.original.LinkText }}
-        <UIcon
-          name="bx:link-external"
-          class="inline-block ml-1"
-        />
-      </NuxtLink>
-    </template>
-  </UTable>
+        <div class="table-cell p-2">{{ dayjs(document.Date).format("M/DD/YY") }}</div>
+        <div class="table-cell p-2">
+          <NuxtLink
+            :href="`https://renoscca.org${document.Path}`"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row items-center hover:underline hover:text-bold underline md:no-underline"
+          >
+            {{ document.LinkText }}
+          </NuxtLink>
+        </div>
+        <div
+          v-if="!isMobile"
+          class="hidden md:table-cell md:p-2"
+        >
+          {{ document.Text }}
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-  import type { TableColumn, TableRow } from "@nuxt/ui";
   import dayjs from "dayjs";
   import type { DocumentModel } from "~/db/models/Document.model";
+
+  const { isMobile } = useDevice();
 
   type Props = {
     // eslint-disable-next-line vue/require-default-prop
@@ -33,32 +47,4 @@
   };
 
   const { documents } = defineProps<Props>();
-
-  const columns: TableColumn<DocumentModel>[] = [
-    {
-      id: "select",
-      maxSize: 0,
-    },
-    {
-      accessorKey: "Date",
-      header: "Date",
-      minSize: 100,
-      maxSize: 100,
-      cell: ({ row }) => dayjs(row.original.Date).format("M/DD/YY"),
-    },
-    {
-      accessorKey: "LinkText",
-      header: "Document",
-    },
-    {
-      accessorKey: "Text",
-      header: "Description",
-    },
-  ];
-
-  const selectedRow = ref<TableRow<DocumentModel> | null>(null);
-
-  const onHover = (_e: Event, row: TableRow<DocumentModel> | null) => {
-    selectedRow.value = row;
-  };
 </script>
