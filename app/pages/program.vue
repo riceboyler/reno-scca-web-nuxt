@@ -7,7 +7,7 @@
         <UTabs
           v-if="tabItems.length"
           :items="tabItems"
-          :size="isMobile ? 'xs' : 'md'"
+          :size="isMobile ? 'xs' : 'lg'"
         >
           <template #content="{ item }">
             <div class="md:m-4 bg-secondary/10">
