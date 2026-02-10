@@ -18,11 +18,13 @@ p {
   margin-bottom: 1rem;
 }
 
-.body a {
+.body a,
+.rules-list a {
   text-decoration: underline;
 }
 
-.body a:hover {
+.body a:hover,
+.rules-list a:hover {
   font-weight: bold;
   color: var(--text-color-highlighted);
 }

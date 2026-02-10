@@ -1,5 +1,10 @@
 export default defineAppConfig({
   ui: {
+    colors: {
+      primary: 'red',
+      secondary: 'indigo',
+      neutral: 'slate',
+    },
     header: {
       slots: {
         root: "bg-default/75 backdrop-blur border-b border-default h-(--ui-header-height) sticky top-0 z-50",
