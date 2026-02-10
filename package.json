@@ -10,6 +10,7 @@
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.2",
     "@nuxt/ui": "^4.4.0",
+    "@nuxtjs/device": "4.0.0",
     "@unhead/vue": "^2.0.3",
     "better-sqlite3": "^12.6.2",
     "dayjs": "^1.11.19",

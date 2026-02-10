@@ -3,6 +3,7 @@
 export default defineNuxtConfig({
   modules: [
     "@nuxt/content",
+    "@nuxtjs/device",
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/hints",
@@ -10,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/scripts",
     "@nuxt/ui",
+    "@nuxtjs/device",
   ],
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
