@@ -62,6 +62,15 @@
     },
     { immediate: true }
   );
+  onMounted(async () => {
+    if (type === "solo" && !soloYears.value) {
+      const { data } = await useFetch<SoloYearConfig[]>("/api/results/solo/years");
+      soloYears.value = data.value;
+    } else if (type === "track" && !trackYears.value) {
+      const { data } = await useFetch<TrackYearConfig[]>("/api/results/track/years");
+      trackYears.value = data.value;
+    }
+  });
 </script>
 
 <style lang="postcss"></style>
