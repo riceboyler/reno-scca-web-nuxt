@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   const result = await pool
     .request()
     .query(
-      `SELECT * FROM SoloYearScores WHERE Year = ${year} ORDER BY Position ASC, GroupNum DESC`
+      `SELECT * FROM SoloYearScores WHERE Year = ${year} AND ScoreType = 'raw' ORDER BY Position ASC, GroupNum DESC`
     );
   return result.recordset as SoloYearScore[];
 });
