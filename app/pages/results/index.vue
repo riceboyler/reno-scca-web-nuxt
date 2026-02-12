@@ -12,7 +12,7 @@
         <SubHeader>
           <div class="text-center w-full">Track</div>
         </SubHeader>
-        <p class="body text-center">Results coming soon!</p>
+        <ResultsTrackWrapper />
       </template>
     </UTabs>
   </UContainer>

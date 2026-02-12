@@ -15,7 +15,7 @@
         <div class="p-1">
           <SubHeader>{{ item.content }}</SubHeader>
           <ResultsSoloGuts
-            v-if="item?.label"
+            v-if="item?.label && type === 'solo'"
             :year-config="
               soloYears?.filter((year) => year.Year.toString() === item.label)[0] as SoloYearConfig
             "
