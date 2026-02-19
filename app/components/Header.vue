@@ -68,7 +68,7 @@
     },
     {
       label: "Photo Gallery",
-      to: "/gallery",
+      to: "/",
       class: "text-xl lg:text-3xl",
     },
     {
