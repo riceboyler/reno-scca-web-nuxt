@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxtjs/device",
     "nuxt-studio",
+    "nuxt-easy-lightbox"
   ],
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
